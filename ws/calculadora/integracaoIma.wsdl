@@ -11,13 +11,13 @@
         </xsi:schema>
     </wsdl:types>
     <message name="IntegracaoImaRequest">
-        <part name="IntegracaoImaRequest" element="gp:integracaoImaWS"/>
+        <part name="IntegracaoImaRequest" element="integracaoImaWS"/>
     </message>
     <message name="IntegracaoImaResponse">
-        <part name="IntegracaoImaResponse" element="gp:confirmacaoWS"/>
+        <part name="IntegracaoImaResponse" element="confirmacaoWS"/>
     </message>
     <message name="ErroInesperadoFault">
-        <part name="ErroInesperadoFault" element="gp:erroInesperadoWS"/>
+        <part name="ErroInesperadoFault" element="erroInesperadoWS"/>
     </message>
     <portType name="IntegracaoImaPortType">
         <operation name="IntegracaoImaOperation">
