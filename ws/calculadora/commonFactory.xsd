@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://jmjsistemas.github.io/ws/calculadora"  xmlns:ns1="http://jmjsistemas.github.io/ws/calculadora">
 
-    <xs:import namespace="http://jmjsistemas.github.io/ws/calculadora" schemaLocation="objetoFactory.xsd"/>
-
     <xs:complexType name="instituicao">
         <xs:complexContent>
-            <xs:extension base="ns1:ct_common">
+            <xs:extension base="ct_common">
                 <xs:sequence/>
             </xs:extension>
         </xs:complexContent>
@@ -13,7 +11,7 @@
 
     <xs:complexType name="hospital">
         <xs:complexContent>
-            <xs:extension base="ns1:ct_common">
+            <xs:extension base="ct_common">
                 <xs:sequence/>
             </xs:extension>
         </xs:complexContent>
@@ -21,10 +19,18 @@
 
     <xs:complexType name="medico">
         <xs:complexContent>
-            <xs:extension base="ns1:ct_common">
+            <xs:extension base="ct_common">
                 <xs:sequence/>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
+
+    <xs:complexType name="ct_common">
+        <xs:sequence>
+            <xs:element name="codigo" type="xs:integer"/>
+            <xs:element name="nome" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
 </xs:schema>
 
