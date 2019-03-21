@@ -57,12 +57,7 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="ct_common">
-    <xs:sequence>
-      <xs:element name="codigo" type="xs:integer"/>
-      <xs:element name="nome" type="xs:string"/>
-    </xs:sequence>
-  </xs:complexType>
+
 
   <xs:complexType name="ct_cabecalhoTransacao">
     <xs:sequence>
