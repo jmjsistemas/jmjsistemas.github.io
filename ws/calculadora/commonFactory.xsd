@@ -3,7 +3,7 @@
 
     <xs:complexType name="instituicao">
         <xs:complexContent>
-            <xs:extension base="ct_common">
+            <xs:extension base="ns1:ct_common">
                 <xs:sequence/>
             </xs:extension>
         </xs:complexContent>
@@ -11,7 +11,7 @@
 
     <xs:complexType name="hospital">
         <xs:complexContent>
-            <xs:extension base="ct_common">
+            <xs:extension base="ns1:ct_common">
                 <xs:sequence/>
             </xs:extension>
         </xs:complexContent>
@@ -19,7 +19,7 @@
 
     <xs:complexType name="medico">
         <xs:complexContent>
-            <xs:extension base="ct_common">
+            <xs:extension base="ns1:ct_common">
                 <xs:sequence/>
             </xs:extension>
         </xs:complexContent>
