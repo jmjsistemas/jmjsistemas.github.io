@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema elementFormDefault="qualified" version="1.0" targetNamespace="http://jmjsistemas.github.io/ws/calculadora" xmlns:tns="http://jmjsistemas.github.io/ws/calculadora" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="confirmacaoWS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="cabecalhoTransacao" type="tns:ct_cabecalhoTransacao"/>
+        <xs:element name="confirmacao" type="tns:ct_confirmacao"/>
+        <xs:element name="hash" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="ct_cabecalhoTransacao">
+    <xs:sequence>
+      <xs:element name="codigoTransacao" type="xs:string"/>
+      <xs:element name="grupo" type="xs:integer"/>
+      <xs:element name="codigoOrigemMensagem" type="xs:integer"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ct_confirmacao">
+    <xs:sequence>
+      <xs:element name="numeroTransacaoPrestadora" type="xs:integer"/>
+      <xs:element name="dataGeracao" type="xs:date"/>
+      <xs:element name="origemResposta" type="xs:integer"/>
+      <xs:element name="numeroVersaoProtocolo" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
