@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <xs:schema elementFormDefault="qualified" version="1.0" targetNamespace="http://jmjsistemas.github.io/ws/calculadora" xmlns:tns="http://jmjsistemas.github.io/ws/calculadora" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-  <xs:import schemaLocation="commonFactory.xsd"/>
+  <xs:include schemaLocation="commonFactory.xsd"/>
 
   <xs:element name="confirmacaoWS">
     <xs:complexType>
@@ -43,9 +43,9 @@
 
   <xs:complexType name="ct_integracao_ima">
     <xs:sequence>
-      <xs:element name="instituicao" type="instituicao"/>
-      <xs:element name="hospital" type="hospital"/>
-      <xs:element name="medico" type="medico"/>
+      <xs:element name="instituicao" type="tns:instituicao"/>
+      <xs:element name="hospital" type="tns:hospital"/>
+      <xs:element name="medico" type="tns:medico"/>
       <xs:element name="especialidade" type="xs:integer"/>
       <xs:element name="populacao" type="xs:integer"/>
       <xs:element name="faixaEtaria" type="xs:integer"/>
