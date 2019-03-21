@@ -1,47 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://jmjsistemas.github.io/ws/calculadora" xmlns:gp="http://jmjsistemas.github.io/ws/calculadora" name="integracaoIma" targetNamespace="http://jmjsistemas.github.io/ws/calculadora">
-	<wsdl:types>
+<definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://jmjsistemas.github.io/ws/calculadora"
+             xmlns:gp="http://jmjsistemas.github.io/ws/calculadora" name="integracaoImaWS" targetNamespace="http://jmjsistemas.github.io/ws/calculadora">
+    <wsdl:types>
         <xsi:schema xmlns:tns="http://jmjsistemas.github.io/ws/calculadora"
                     xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
                     xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gp="http://jmjsistemas.github.io/ws/calculadora"
                     targetNamespace="http://jmjsistemas.github.io/ws/calculadora">
-			<xsi:import namespace="http://jmjsistemas.github.io/ws/calculadora" schemaLocation="objetoFactory.xsd" />
-		</xsi:schema>
-	</wsdl:types>
-	<message name="IntegracaoImaRequest">
-		<part name="IntegracaoImaRequest" element="gp:integracaoImaWS" />
-	</message>
-	<message name="IntegracaoImaResponse">
-		<part name="IntegracaoImaResponse" element="gp:confirmacaoWS" />
-	</message>
-	<message name="ErroInesperadoFault">
-		<part name="ErroInesperadoFault" element="gp:erroInesperadoWS" />
-	</message>
-	<portType name="IntegracaoImaPortType">
-		<operation name="IntegracaoImaOperation">
-			<input message="tns:IntegracaoImaRequest" />
-			<output message="tns:IntegracaoImaResponse" />
-			<fault name="ErroInesperadoFault" message="tns:ErroInesperadoFault" />
-		</operation>
-	</portType>
-	<binding name="IntegracaoImaBinding" type="tns:IntegracaoImaPortType">
-		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
-		<operation name="IntegracaoImaOperation">
-			<soap:operation soapAction="" />
-			<input>
-				<soap:body use="literal" />
-			</input>
-			<output>
-				<soap:body use="literal" />
-			</output>
-			<fault name="ErroInesperadoFault">
-				<soap:fault name="ErroInesperadoFault" use="literal" />
-			</fault>
-		</operation>
-	</binding>
-	<service name="IntegracaoIma">
-		<port name="IntegracaoImaPort" binding="tns:IntegracaoImaBinding">
-			<soap:address location="https://jmjsistemas.github.io/ws/calculadora"/>
-		</port>
-	</service>
+            <xsi:import namespace="http://jmjsistemas.github.io/ws/calculadora" schemaLocation="objetoFactory.xsd"/>
+        </xsi:schema>
+    </wsdl:types>
+    <message name="IntegracaoImaRequest">
+        <part name="IntegracaoImaRequest" element="gp:integracaoImaWS"/>
+    </message>
+    <message name="IntegracaoImaResponse">
+        <part name="IntegracaoImaResponse" element="gp:confirmacaoWS"/>
+    </message>
+    <message name="ErroInesperadoFault">
+        <part name="ErroInesperadoFault" element="gp:erroInesperadoWS"/>
+    </message>
+    <portType name="IntegracaoImaPortType">
+        <operation name="IntegracaoImaOperation">
+            <input message="tns:IntegracaoImaRequest"/>
+            <output message="tns:IntegracaoImaResponse"/>
+            <fault name="ErroInesperadoFault" message="tns:ErroInesperadoFault"/>
+        </operation>
+    </portType>
+    <binding name="IntegracaoImaBinding" type="tns:IntegracaoImaPortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="IntegracaoImaOperation">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErroInesperadoFault">
+                <soap:fault name="ErroInesperadoFault" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="IntegracaoIma">
+        <port name="IntegracaoImaPort" binding="tns:IntegracaoImaBinding">
+            <soap:address location="https://jmjsistemas.github.io/ws/calculadora"/>
+        </port>
+    </service>
 </definitions>
