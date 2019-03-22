@@ -60,8 +60,7 @@
       <xs:element name="codigoTransacao" type="xs:string"/>
       <xs:element name="instituicao" type="xs:string"/>
       <xs:element name="hospital" type="xs:string"/>
-      <xs:element name="usuario" type="xs:string"/>
-      <xs:element name="senha" type="xs:string"/>
+      <xs:element name="apiKey" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
 
