@@ -67,6 +67,7 @@
   <xs:complexType name="ct_erroInesperado">
     <xs:sequence>
       <xs:element name="numeroTransacao" type="xs:string" minOccurs="0"/>
+      <xs:element name="numeroTransacaoInterno" type="xs:string" minOccurs="0"/>
       <xs:element name="codigoErro" type="xs:string" minOccurs="0"/>
       <xs:element name="mensagemErro" type="xs:string" minOccurs="0"/>
     </xs:sequence>
