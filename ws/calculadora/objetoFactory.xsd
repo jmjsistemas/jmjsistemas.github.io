@@ -32,10 +32,10 @@
 
   <xs:complexType name="ct_confirmacao">
     <xs:sequence>
-      <xs:element name="numeroTransacaoPrestadora" type="xs:integer"/>
-      <xs:element name="dataGeracao" type="xs:date"/>
-      <xs:element name="origemResposta" type="xs:integer"/>
-      <xs:element name="numeroVersaoProtocolo" type="xs:string"/>
+      <xs:element name="numeroTransacaoCliente" type="xs:string"/>
+      <xs:element name="numeroTransacaoInterno" type="xs:string"/>
+      <xs:element name="dataIntegracao" type="xs:dateTime"/>
+      <xs:element name="statusTransacao" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
 
