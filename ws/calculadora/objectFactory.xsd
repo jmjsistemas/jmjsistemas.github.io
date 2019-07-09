@@ -1,51 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<xs:schema elementFormDefault="qualified" version="1.0" targetNamespace="http://jmjsistemas.github.io/ws/calculadora" xmlns:tns="http://jmjsistemas.github.io/ws/calculadora" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-  <xs:element name="confirmacaoEcWS">
+  <xs:element name="confirmacaoWS">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="cabecalhoTransacao" type="ct_cabecalhoTransacaoEc"/>
+        <xs:element name="cabecalhoTransacao" type="ct_cabecalhoTransacao"/>
         <xs:element name="confirmacao" type="ct_confirmacao"/>
         <xs:element name="hash" type="xs:string"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
 
-  <xs:element name="confirmacaoImaWS">
+  <xs:element name="erroInesperadoWS">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="cabecalhoTransacao" type="ct_cabecalhoTransacaoIma"/>
-        <xs:element name="confirmacao" type="ct_confirmacao"/>
-        <xs:element name="hash" type="xs:string"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-
-  <xs:element name="erroInesperadoEcWS">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element name="cabecalhoTransacao" type="ct_cabecalhoTransacaoEc"/>
+        <xs:element name="cabecalhoTransacao" type="ct_cabecalhoTransacao"/>
         <xs:element name="erroInesperado" type="ct_erroInesperado"/>
         <xs:element name="hash" type="xs:string"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-
-  <xs:element name="erroInesperadoImaWS">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element name="cabecalhoTransacao" type="ct_cabecalhoTransacaoIma"/>
-        <xs:element name="erroInesperado" type="ct_erroInesperado"/>
-        <xs:element name="hash" type="xs:string"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-
-  <xs:element name="integracaoEcWS">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element name="cabecalhoTransacao" type="ct_cabecalhoTransacaoEc"/>
-        <xs:element name="integracaoEc" type="integracaoEc" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -53,22 +24,22 @@
   <xs:element name="integracaoImaWS">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="cabecalhoTransacao" type="ct_cabecalhoTransacaoIma"/>
-        <xs:element name="integracaoIma" type="ct_integracaoIma" maxOccurs="unbounded"/>
+        <xs:element name="cabecalhoTransacao" type="ct_cabecalhoTransacao"/>
+        <xs:element name="integracaoIma" type="ct_integracao_ima" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
 
-  <xs:complexType name="ct_cabecalhoTransacaoIma">
+  <xs:complexType name="ct_confirmacao">
     <xs:sequence>
-      <xs:element name="codigoTransacao" type="xs:string"/>
-      <xs:element name="instituicao" type="xs:string"/>
-      <xs:element name="hospital" type="xs:string"/>
-      <xs:element name="apiKey" type="xs:string"/>
+      <xs:element name="numeroTransacaoCliente" type="xs:string"/>
+      <xs:element name="numeroTransacaoInterno" type="xs:string"/>
+      <xs:element name="dataIntegracao" type="xs:dateTime"/>
+      <xs:element name="statusTransacao" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="ct_integracaoIma">
+  <xs:complexType name="ct_integracao_ima">
     <xs:sequence>
       <xs:element name="medicoCrm" type="xs:string"/>
       <xs:element name="medicoCrmUF" type="xs:string"/>
@@ -84,20 +55,12 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="ct_cabecalhoTransacaoEc">
+  <xs:complexType name="ct_cabecalhoTransacao">
     <xs:sequence>
       <xs:element name="codigoTransacao" type="xs:string"/>
-      <xs:element name="idExterno" type="xs:string"/>
+      <xs:element name="instituicao" type="xs:string"/>
+      <xs:element name="hospital" type="xs:string"/>
       <xs:element name="apiKey" type="xs:string"/>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="ct_confirmacao">
-    <xs:sequence>
-      <xs:element name="numeroTransacaoCliente" type="xs:string"/>
-      <xs:element name="numeroTransacaoInterno" type="xs:string"/>
-      <xs:element name="dataIntegracao" type="xs:dateTime"/>
-      <xs:element name="statusTransacao" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -110,13 +73,14 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="integracaoEc">
-    <xs:sequence>
-      <xs:element name="questionario" type="xs:string"/>
-      <xs:element name="pergunta" type="xs:string"/>
-      <xs:element name="resposta" type="xs:string"/>
-    </xs:sequence>
-  </xs:complexType>
+  <xs:simpleType name="dm_faixaEtaria">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+      <xs:enumeration value="4"/>
+    </xs:restriction>
+  </xs:simpleType>
 
   <xs:simpleType name="dm_populacao">
     <xs:restriction base="xs:string">
@@ -128,15 +92,6 @@
       <xs:enumeration value="6"/>
       <xs:enumeration value="7"/>
       <xs:enumeration value="8"/>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="dm_faixaEtaria">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="1"/>
-      <xs:enumeration value="2"/>
-      <xs:enumeration value="3"/>
-      <xs:enumeration value="4"/>
     </xs:restriction>
   </xs:simpleType>
 </xs:schema>

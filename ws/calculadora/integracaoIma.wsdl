@@ -14,10 +14,10 @@
         <part name="IntegracaoImaRequest" element="gp:integracaoImaWS"/>
     </message>
     <message name="IntegracaoImaResponse">
-        <part name="IntegracaoImaResponse" element="gp:confirmacaoImaWS"/>
+        <part name="IntegracaoImaResponse" element="gp:confirmacaoWS"/>
     </message>
     <message name="ErroInesperadoFault">
-        <part name="ErroInesperadoFault" element="gp:erroInesperadoImaWS"/>
+        <part name="ErroInesperadoFault" element="gp:erroInesperadoWS"/>
     </message>
     <portType name="IntegracaoImaPortType">
         <operation name="IntegracaoImaOperation">
