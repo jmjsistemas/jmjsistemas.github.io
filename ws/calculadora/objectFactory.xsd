@@ -4,7 +4,7 @@
   <xs:element name="confirmacaoWS">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="cabecalhoTransacao" type="tns:ct_cabecalhoTransacao"/>
+        <xs:element name="cabecalhoTransacao" type="xs:anyType"/>
         <xs:element name="confirmacao" type="tns:ct_confirmacao"/>
         <xs:element name="hash" type="xs:string"/>
       </xs:sequence>
@@ -14,9 +14,18 @@
   <xs:element name="erroInesperadoWS">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="cabecalhoTransacao" type="tns:ct_cabecalhoTransacao"/>
+        <xs:element name="cabecalhoTransacao" type="xs:anyType"/>
         <xs:element name="erroInesperado" type="tns:ct_erroInesperado"/>
         <xs:element name="hash" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="integracaoEcWS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="cabecalhoTransacao" type="tns:ct_cabecalhoTransacao_ec"/>
+        <xs:element name="integracaoEc" type="tns:ct_integracao_ec" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -24,7 +33,7 @@
   <xs:element name="integracaoImaWS">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="cabecalhoTransacao" type="tns:ct_cabecalhoTransacao"/>
+        <xs:element name="cabecalhoTransacao" type="tns:ct_cabecalhoTransacao_ima"/>
         <xs:element name="integracaoIma" type="tns:ct_integracao_ima" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
@@ -36,6 +45,15 @@
       <xs:element name="numeroTransacaoInterno" type="xs:string"/>
       <xs:element name="dataIntegracao" type="xs:dateTime"/>
       <xs:element name="statusTransacao" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ct_erroInesperado">
+    <xs:sequence>
+      <xs:element name="numeroTransacao" type="xs:string" minOccurs="0"/>
+      <xs:element name="numeroTransacaoInterno" type="xs:string" minOccurs="0"/>
+      <xs:element name="codigoErro" type="xs:string" minOccurs="0"/>
+      <xs:element name="mensagemErro" type="xs:string" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -55,7 +73,7 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="ct_cabecalhoTransacao">
+  <xs:complexType name="ct_cabecalhoTransacao_ima">
     <xs:sequence>
       <xs:element name="codigoTransacao" type="xs:string"/>
       <xs:element name="instituicao" type="xs:string"/>
@@ -64,13 +82,28 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="ct_erroInesperado">
+  <xs:complexType name="ct_integracao_ec">
     <xs:sequence>
-      <xs:element name="numeroTransacao" type="xs:string" minOccurs="0"/>
-      <xs:element name="numeroTransacaoInterno" type="xs:string" minOccurs="0"/>
-      <xs:element name="codigoErro" type="xs:string" minOccurs="0"/>
-      <xs:element name="mensagemErro" type="xs:string" minOccurs="0"/>
+      <xs:element name="questionario" type="xs:string"/>
+      <xs:element name="pergunta" type="xs:string"/>
+      <xs:element name="resposta" type="xs:string"/>
     </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ct_cabecalhoTransacao_ec">
+    <xs:sequence>
+      <xs:element name="codigoTransacao" type="xs:string"/>
+      <xs:element name="idExterno" type="xs:string"/>
+      <xs:element name="apiKey" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="objectFactoryIma">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="objectFactoryEc">
+    <xs:sequence/>
   </xs:complexType>
 
   <xs:simpleType name="dm_populacao">
@@ -95,3 +128,4 @@
     </xs:restriction>
   </xs:simpleType>
 </xs:schema>
+
