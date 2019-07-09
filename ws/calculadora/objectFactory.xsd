@@ -5,7 +5,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element name="cabecalhoTransacao" type="ct_cabecalhoTransacaoEc"/>
-        <xs:element name="confirmacao" type="ima_confirmacao"/>
+        <xs:element name="confirmacao" type="ct_confirmacao"/>
         <xs:element name="hash" type="xs:string"/>
       </xs:sequence>
     </xs:complexType>
@@ -15,7 +15,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element name="cabecalhoTransacao" type="ct_cabecalhoTransacaoIma"/>
-        <xs:element name="confirmacao" type="ima_confirmacao"/>
+        <xs:element name="confirmacao" type="ct_confirmacao"/>
         <xs:element name="hash" type="xs:string"/>
       </xs:sequence>
     </xs:complexType>
@@ -59,7 +59,7 @@
     </xs:complexType>
   </xs:element>
 
-  <xs:complexType name="ima_confirmacao">
+  <xs:complexType name="ct_confirmacao">
     <xs:sequence>
       <xs:element name="numeroTransacaoCliente" type="xs:string"/>
       <xs:element name="numeroTransacaoInterno" type="xs:string"/>
