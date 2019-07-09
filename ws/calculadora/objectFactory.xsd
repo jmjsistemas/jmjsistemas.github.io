@@ -93,7 +93,7 @@
   <xs:complexType name="ct_cabecalhoTransacao_ec">
     <xs:sequence>
       <xs:element name="codigoTransacao" type="xs:string"/>
-      <xs:element name="idExterno" type="xs:string"/>
+      <xs:element name="idInterncacao" type="xs:string"/>
       <xs:element name="apiKey" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
