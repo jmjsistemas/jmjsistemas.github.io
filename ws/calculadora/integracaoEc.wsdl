@@ -14,10 +14,10 @@
         <part name="IntegracaoEcRequest" element="gp:integracaoEcWS"/>
     </message>
     <message name="IntegracaoEcResponse">
-        <part name="IntegracaoEcResponse" element="gp:confirmacaoEcWS"/>
+        <part name="IntegracaoEcResponse" element="gp:confirmacaoWS"/>
     </message>
     <message name="ErroInesperadoFault">
-        <part name="ErroInesperadoFault" element="gp:erroInesperadoEcWS"/>
+        <part name="ErroInesperadoFault" element="gp:erroInesperadoWS"/>
     </message>
     <portType name="IntegracaoEcPortType">
         <operation name="IntegracaoEcOperation">
