@@ -45,7 +45,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element name="cabecalhoTransacao" type="ct_cabecalhoTransacaoEc"/>
-        <xs:element name="integracaoEc" type="ct_integracaoEc" maxOccurs="unbounded"/>
+        <xs:element name="integracaoEc" type="integracaoEc" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -59,21 +59,12 @@
     </xs:complexType>
   </xs:element>
 
-  <xs:complexType name="ct_confirmacao">
+  <xs:complexType name="ct_cabecalhoTransacaoIma">
     <xs:sequence>
-      <xs:element name="numeroTransacaoCliente" type="xs:string"/>
-      <xs:element name="numeroTransacaoInterno" type="xs:string"/>
-      <xs:element name="dataIntegracao" type="xs:dateTime"/>
-      <xs:element name="statusTransacao" type="xs:string"/>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="ct_erroInesperado">
-    <xs:sequence>
-      <xs:element name="numeroTransacao" type="xs:string" minOccurs="0"/>
-      <xs:element name="numeroTransacaoInterno" type="xs:string" minOccurs="0"/>
-      <xs:element name="codigoErro" type="xs:string" minOccurs="0"/>
-      <xs:element name="mensagemErro" type="xs:string" minOccurs="0"/>
+      <xs:element name="codigoTransacao" type="xs:string"/>
+      <xs:element name="instituicao" type="xs:string"/>
+      <xs:element name="hospital" type="xs:string"/>
+      <xs:element name="apiKey" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -93,28 +84,37 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="ct_cabecalhoTransacaoIma">
-    <xs:sequence>
-      <xs:element name="codigoTransacao" type="xs:string"/>
-      <xs:element name="instituicao" type="xs:string"/>
-      <xs:element name="hospital" type="xs:string"/>
-      <xs:element name="apiKey" type="xs:string"/>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="ct_integracaoEc">
-    <xs:sequence>
-      <xs:element name="questionario" type="xs:string"/>
-      <xs:element name="pergunta" type="xs:string"/>
-      <xs:element name="resposta" type="xs:string"/>
-    </xs:sequence>
-  </xs:complexType>
-
   <xs:complexType name="ct_cabecalhoTransacaoEc">
     <xs:sequence>
       <xs:element name="codigoTransacao" type="xs:string"/>
       <xs:element name="idExterno" type="xs:string"/>
       <xs:element name="apiKey" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ct_confirmacao">
+    <xs:sequence>
+      <xs:element name="numeroTransacaoCliente" type="xs:string"/>
+      <xs:element name="numeroTransacaoInterno" type="xs:string"/>
+      <xs:element name="dataIntegracao" type="xs:dateTime"/>
+      <xs:element name="statusTransacao" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ct_erroInesperado">
+    <xs:sequence>
+      <xs:element name="numeroTransacao" type="xs:string" minOccurs="0"/>
+      <xs:element name="numeroTransacaoInterno" type="xs:string" minOccurs="0"/>
+      <xs:element name="codigoErro" type="xs:string" minOccurs="0"/>
+      <xs:element name="mensagemErro" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="integracaoEc">
+    <xs:sequence>
+      <xs:element name="questionario" type="xs:string"/>
+      <xs:element name="pergunta" type="xs:string"/>
+      <xs:element name="resposta" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
 
