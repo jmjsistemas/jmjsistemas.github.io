@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <xs:schema elementFormDefault="qualified" version="1.0" targetNamespace="http://jmjsistemas.github.io/ws/calculadora" xmlns:tns="http://jmjsistemas.github.io/ws/calculadora" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-  <xs:element name="confirmacaoWS">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element name="cabecalhoTransacao" type="xs:anyType"/>
-        <xs:element name="confirmacao" type="tns:ct_confirmacao"/>
-        <xs:element name="hash" type="xs:string"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
+  <xs:element name="confirmacaoWS" nillable="true" type="xs:anyType"/>
 
   <xs:element name="erroInesperadoWS">
     <xs:complexType>
