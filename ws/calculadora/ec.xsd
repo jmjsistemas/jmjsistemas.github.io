@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema elementFormDefault="qualified" version="1.0"
+           targetNamespace="http://jmjsistemas.github.io/ws/calculadora"
+           xmlns:tns="http://jmjsistemas.github.io/ws/calculadora"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:complexType name="ct_integracao_ec">
+        <xs:sequence>
+            <xs:element name="questionario" type="xs:string"/>
+            <xs:element name="pergunta" type="xs:string"/>
+            <xs:element name="resposta" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ct_cabecalhoTransacao_ec">
+        <xs:sequence>
+            <xs:element name="codigoTransacao" type="xs:string"/>
+            <xs:element name="idInternacao" type="xs:string"/>
+            <xs:element name="apiKey" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+
+    <xs:complexType name="objectFactoryEc">
+        <xs:sequence/>
+    </xs:complexType>
+
+    <xs:element name="integracaoEcWS">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="cabecalhoTransacao" type="tns:ct_cabecalhoTransacao_ec"/>
+                <xs:element name="integracaoEc" type="tns:ct_integracao_ec" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
+
