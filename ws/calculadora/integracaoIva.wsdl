@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://jmjsistemas.github.io/ws/calculadora"
+             xmlns:gp="http://jmjsistemas.github.io/ws/calculadora" name="integracaoImaWS"
+             targetNamespace="http://jmjsistemas.github.io/ws/calculadora">
+    <wsdl:types>
+        <xsi:schema xmlns:tns="http://jmjsistemas.github.io/ws/calculadora"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                    xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gp="http://jmjsistemas.github.io/ws/calculadora"
+                    targetNamespace="http://jmjsistemas.github.io/ws/calculadora">
+            <xsi:import schemaLocation="commons.xsd"/>
+            <xsi:import schemaLocation="iva.xsd"/>
+        </xsi:schema>
+    </wsdl:types>
+    <message name="IntegracaoIvaRequest">
+        <part name="IntegracaoIvaRequest" element="gp:integracaoIvaWS"/>
+    </message>
+    <message name="IntegracaoIvaResponse">
+        <part name="IntegracaoIvaResponse" element="gp:confirmacaoWS"/>
+    </message>
+    <message name="ErroInesperadoFault">
+        <part name="ErroInesperadoFault" element="gp:erroInesperadoWS"/>
+    </message>
+    <portType name="IntegracaoIvaPortType">
+        <operation name="IntegracaoIvaOperation">
+            <input message="tns:IntegracaoIvaRequest"/>
+            <output message="tns:IntegracaoIvaResponse"/>
+            <fault name="ErroInesperadoFault" message="tns:ErroInesperadoFault"/>
+        </operation>
+    </portType>
+    <binding name="IntegracaoIvaBinding" type="tns:IntegracaoIvaPortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="IntegracaoIvaOperation">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErroInesperadoFault">
+                <soap:fault name="ErroInesperadoFault" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="IntegracaoIva">
+        <port name="IntegracaoIvaPort" binding="tns:IntegracaoIvaBinding">
+            <soap:address location="https://jmjsistemas.github.io/ws/calculadora"/>
+        </port>
+    </service>
+</definitions>
