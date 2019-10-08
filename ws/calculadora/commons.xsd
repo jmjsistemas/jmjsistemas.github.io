@@ -32,28 +32,6 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:simpleType name="dm_populacao">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="1"/>
-      <xs:enumeration value="2"/>
-      <xs:enumeration value="3"/>
-      <xs:enumeration value="4"/>
-      <xs:enumeration value="5"/>
-      <xs:enumeration value="6"/>
-      <xs:enumeration value="7"/>
-      <xs:enumeration value="8"/>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="dm_faixaEtaria">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="1"/>
-      <xs:enumeration value="2"/>
-      <xs:enumeration value="3"/>
-      <xs:enumeration value="4"/>
-    </xs:restriction>
-  </xs:simpleType>
-
   <xs:element name="erroInesperadoWS">
     <xs:complexType>
       <xs:sequence>
@@ -78,6 +56,7 @@
       <xs:element name="medicoCrm" type="xs:string"/>
       <xs:element name="medicoCrmUF" type="xs:string"/>
       <xs:element name="medicoNome" type="xs:string"/>
+      <xs:element name="codigoEspecialidade" type="xs:string"/>
       <xs:element name="especialidade" type="xs:string"/>
       <xs:element name="populacao" type="tns:dm_populacao" minOccurs="0"/>
       <xs:element name="faixaEtaria" type="tns:dm_faixaEtaria" minOccurs="0"/>
@@ -89,6 +68,27 @@
     </xs:sequence>
   </xs:complexType>
 
+  <xs:simpleType name="dm_populacao">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+      <xs:enumeration value="4"/>
+      <xs:enumeration value="5"/>
+      <xs:enumeration value="6"/>
+      <xs:enumeration value="7"/>
+      <xs:enumeration value="8"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="dm_faixaEtaria">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+      <xs:enumeration value="4"/>
+    </xs:restriction>
+  </xs:simpleType>
 
 </xs:schema>
 
