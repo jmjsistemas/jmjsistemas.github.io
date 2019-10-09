@@ -6,11 +6,20 @@
   <xs:element name="integracaoImaWS">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="cabecalhoTransacao" type="tns:ct_cabecalhoTransacao"/>
+        <xs:element name="cabecalhoTransacaoIma" type="tns:ct_cabecalhoTransacao"/>
         <xs:element name="integracaoIma" type="tns:ct_integracaoIma" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+
+  <xs:complexType name="ct_cabecalhoTransacao">
+    <xs:sequence>
+      <xs:element name="codigoTransacao" type="xs:string"/>
+      <xs:element name="instituicao" type="xs:string"/>
+      <xs:element name="hospital" type="xs:string"/>
+      <xs:element name="apiKey" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
 
   <xs:complexType name="ct_integracaoIma">
     <xs:complexContent>
@@ -20,5 +29,21 @@
     </xs:complexContent>
   </xs:complexType>
 
+  <xs:complexType name="ct_integracao">
+    <xs:sequence>
+      <xs:element name="medicoCrm" type="xs:string"/>
+      <xs:element name="medicoCrmUF" type="xs:string"/>
+      <xs:element name="medicoNome" type="xs:string"/>
+      <xs:element name="especialidade" type="xs:string"/>
+      <xs:element name="codigoEspecialidade" type="xs:string"/>
+      <xs:element name="populacao" type="xs:string" minOccurs="0"/>
+      <xs:element name="faixaEtaria" type="xs:string" minOccurs="0"/>
+      <xs:element name="competencia" type="xs:string"/>
+      <xs:element name="indicador" type="xs:long"/>
+      <xs:element name="numerador" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="denominador" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="ocorrencia" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
 </xs:schema>
 
