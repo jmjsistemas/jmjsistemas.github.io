@@ -7,7 +7,7 @@
                     xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
                     xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gp="http://jmjsistemas.github.io/ws/calculadora"
                     targetNamespace="http://jmjsistemas.github.io/ws/calculadora">
-            <xsi:import schemaLocation="commons.xsd"/>
+
             <xsi:import schemaLocation="ec.xsd"/>
         </xsi:schema>
     </wsdl:types>

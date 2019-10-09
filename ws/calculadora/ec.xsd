@@ -4,6 +4,8 @@
            xmlns:tns="http://jmjsistemas.github.io/ws/calculadora"
            xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
+    <xs:include schemaLocation="commons.xsd"/>
+
     <xs:complexType name="ct_integracao_ec">
         <xs:sequence>
             <xs:element name="questionario" type="xs:string"/>
