@@ -4,7 +4,7 @@
   <xs:element name="confirmacaoWS">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="cabecalhoTransacao" type="xs:anyType"/>
+        <xs:element name="cabecalhoTransacao" type="tns:ct_cabecalhoTransacao"/>
         <xs:element name="confirmacao" type="tns:ct_confirmacao"/>
         <xs:element name="hash" type="xs:string"/>
       </xs:sequence>
@@ -21,6 +21,15 @@
     </xs:complexType>
   </xs:element>
 
+  <xs:complexType name="ct_cabecalhoTransacao">
+    <xs:sequence>
+      <xs:element name="codigoTransacao" type="xs:string"/>
+      <xs:element name="instituicao" type="xs:string"/>
+      <xs:element name="hospital" type="xs:string"/>
+      <xs:element name="apiKey" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
   <xs:complexType name="ct_confirmacao">
     <xs:sequence>
       <xs:element name="numeroTransacaoCliente" type="xs:string"/>
@@ -36,15 +45,6 @@
       <xs:element name="numeroTransacaoInterno" type="xs:string" minOccurs="0"/>
       <xs:element name="codigoErro" type="xs:string" minOccurs="0"/>
       <xs:element name="mensagemErro" type="xs:string" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="ct_cabecalhoTransacao">
-    <xs:sequence>
-      <xs:element name="codigoTransacao" type="xs:string"/>
-      <xs:element name="instituicao" type="xs:string"/>
-      <xs:element name="hospital" type="xs:string"/>
-      <xs:element name="apiKey" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
 

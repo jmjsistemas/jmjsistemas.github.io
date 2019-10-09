@@ -6,7 +6,7 @@
   <xs:element name="integracaoImaWS">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="cabecalhoTransacaoIma" type="tns:ct_cabecalhoTransacao"/>
+        <xs:element name="cabecalhoTransacao" type="tns:ct_cabecalhoTransacao"/>
         <xs:element name="integracaoIma" type="tns:ct_integracaoIma" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
